@@ -25,4 +25,26 @@ public class Functions {
     public static boolean isPalindrome(long number) {
         return reverseNumber(number) == number;
     }
+
+
+    /**
+     * Returns the largest positive integer that divides the numbers without a remainder
+     */
+    public static long greatestCommonDivisor(long a, long b) {
+        while (b > 0) {
+            long temp = b;
+            b = a % b;
+            a = temp;
+        }
+
+        return a;
+    }
+
+
+    /**
+     * Returns the smallest positive integer that is divisible by both a and b
+     */
+    public static long leastCommonMultiple(long a, long b) {
+        return a * (b / greatestCommonDivisor(a, b));
+    }
 }
