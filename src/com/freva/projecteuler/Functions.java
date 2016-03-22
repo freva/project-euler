@@ -79,12 +79,11 @@ public class Functions {
 
         for (int i=2; i*i <= n; i++) {
             if (! isComposite[i]) {
-                for (int j = i; i*j <= n; j++) {
-                    isComposite[i * j] = true;
+                for (int j = i*i; j <= n; j+=i) {
+                    isComposite[j] = true;
                 }
             }
         }
-
 
         List<Integer> primes = new ArrayList<>((int) (n / (Math.log(n)-1)));
         for(int i = 2; i <= n; i++) {
