@@ -9,8 +9,8 @@ import com.freva.projecteuler.Problem;
 public class Problem001 implements Problem {
 	public Number solve() {
 		int sum = 0;
-		for(int i=2; i<1000; i++){
-			if(i % 3 == 0 || i % 5 == 0){
+		for(int i=2; i<1000; i++) {
+			if(i % 3 == 0 || i % 5 == 0) {
 				sum += i;
 			}
 		}
