@@ -17,7 +17,7 @@ public class Problem013 implements Problem {
 			 for (int i=0; i<100; i++) {
 				 answer += Long.parseLong(br.readLine().substring(0, 11));
 			 }
-		} catch (Exception ignored){}
+		} catch (Exception ignored) {}
 
         while (answer > Math.pow(10, 10)) {
             answer /= 10;

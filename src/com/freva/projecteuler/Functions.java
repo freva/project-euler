@@ -6,6 +6,12 @@ import java.util.List;
 
 public class Functions {
     /**
+     * Factorials for the first ten numbers (all single digits). TEN_FACTORIALS[3] = 3!
+     */
+    public static final int[] TEN_FACTORIALS = new int[] {1, 1, 2, 6, 24, 120, 720, 5040, 40320, 362880};
+
+
+    /**
      * Lexically reverses the number without going via String. 2341 => 1432
      * @param number Number to reverse
      * @return number reversed

@@ -81,4 +81,53 @@ public class ProblemSolutions {
         assertEquals(new Problem015().solve(), 137846528820L);
     }
 
+    @Test
+    public void testProblem016Solution() {
+        assertEquals(new Problem016().solve(), 1366);
+    }
+
+    @Test
+    public void testProblem017Solution() {
+        assertEquals(new Problem017().solve(), 21124);
+    }
+
+    @Test
+    public void testProblem018Solution() {
+        assertEquals(new Problem018().solve(), 1074);
+    }
+
+    @Test
+    public void testProblem019Solution() {
+        assertEquals(new Problem019().solve(), 171);
+    }
+
+    @Test
+    public void testProblem020Solution() {
+        assertEquals(new Problem020().solve(), 648);
+    }
+
+    @Test
+    public void testProblem021Solution() {
+        assertEquals(new Problem021().solve(), 31626);
+    }
+
+    @Test
+    public void testProblem022Solution() {
+        assertEquals(new Problem022().solve(), 871198282);
+    }
+
+    @Test
+    public void testProblem023Solution() {
+        assertEquals(new Problem023().solve(), 4179871);
+    }
+
+    @Test
+    public void testProblem024Solution() {
+        assertEquals(new Problem024().solve(), 2783915460L);
+    }
+
+    @Test
+    public void testProblem025Solution() {
+        assertEquals(new Problem025().solve(), 4782);
+    }
 }
