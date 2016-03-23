@@ -75,12 +75,9 @@ public class Functions {
     }
 
     /**
-     * Very fast prime number generator
-     * http://en.wikipedia.org/wiki/Sieve_of_Eratosthenes
-     * @param n largest number to consider for primes
-     * @return List of primes <= n
-    */
-    public static List<Integer> sieveOfEratosthenes(int n) {
+     * Generates an array of length n + 1 where i'th index is set to true if i is composite and false if i is prime
+     */
+    public static boolean[] sieveOfEratosthenes(int n) {
         final boolean[] isComposite = new boolean[n + 1];
 
         for (int i=2; i*i <= n; i++) {
@@ -90,6 +87,18 @@ public class Functions {
                 }
             }
         }
+
+        return isComposite;
+    }
+
+    /**
+     * Very fast prime number generator
+     * http://en.wikipedia.org/wiki/Sieve_of_Eratosthenes
+     * @param n largest number to consider for primes
+     * @return List of primes <= n
+    */
+    public static List<Integer> getPrimesBelow(int n) {
+        final boolean[] isComposite = sieveOfEratosthenes(n);
 
         List<Integer> primes = new ArrayList<>((int) (n / (Math.log(n)-1)));
         for(int i = 2; i <= n; i++) {

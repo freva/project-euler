@@ -1,11 +1,11 @@
-package com.freva.projecteuler;
+package com.freva.projecteuler.lvls;
 
 import com.freva.projecteuler.lvl0.*;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
-public class ProblemSolutions {
+public class Lvl0 {
     @Test
     public void testProblem001Solution() {
         assertEquals(new Problem001().solve(), 233168);
