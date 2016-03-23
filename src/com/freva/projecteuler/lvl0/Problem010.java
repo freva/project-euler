@@ -15,8 +15,4 @@ public class Problem010 implements Problem {
 
         return Functions.sum(primes);
     }
-
-    public Number solution() {
-        return 142913828922L;
-    }
 }

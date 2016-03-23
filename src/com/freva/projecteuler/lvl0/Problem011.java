@@ -56,9 +56,4 @@ public class Problem011 implements Problem {
 
         return highest;
     }
-
-
-    public Number solution() {
-        return 70600674;
-    }
 }

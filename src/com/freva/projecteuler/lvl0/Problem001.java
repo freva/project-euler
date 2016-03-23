@@ -17,8 +17,4 @@ public class Problem001 implements Problem {
 
 		return sum;
 	}
-
-    public Number solution() {
-        return 233168;
-    }
 } 

@@ -14,8 +14,4 @@ public class Problem006 implements Problem {
 
 		return sum*sum - sumOfSquares;
 	}
-
-    public Number solution() {
-        return 25164150;
-    }
 }

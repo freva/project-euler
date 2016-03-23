@@ -34,8 +34,4 @@ public class Problem014 implements Problem {
 		
 		return longestN;
 	}
-
-	public Number solution() {
-		return 837799;
-	}
 }

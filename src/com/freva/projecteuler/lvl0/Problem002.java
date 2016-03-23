@@ -22,8 +22,4 @@ public class Problem002 implements Problem {
 		
 		return sum;
 	}
-
-	public Number solution() {
-		return 4613732;
-	}
 }

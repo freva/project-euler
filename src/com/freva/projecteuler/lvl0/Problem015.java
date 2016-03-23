@@ -23,8 +23,4 @@ public class Problem015 implements Problem {
 		
 		return array[size-1][size-1];
 	}
-
-    public Number solution() {
-        return 137846528820L;
-    }
 }

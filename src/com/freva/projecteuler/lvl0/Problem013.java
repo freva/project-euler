@@ -24,8 +24,4 @@ public class Problem013 implements Problem {
         }
         return answer;
 	}
-
-	public Number solution() {
-		return 5537376230L;
-	}
 }

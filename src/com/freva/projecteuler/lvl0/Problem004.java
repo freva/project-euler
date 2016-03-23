@@ -27,8 +27,4 @@ public class Problem004 implements Problem {
 
 		return largest;
 	}
-
-	public Number solution() {
-		return 906609;
-	}
 }

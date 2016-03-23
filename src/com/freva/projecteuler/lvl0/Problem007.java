@@ -18,8 +18,4 @@ public class Problem007 implements Problem {
             }
         }
     }
-
-    public Number solution() {
-        return 104743;
-    }
 }

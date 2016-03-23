@@ -33,8 +33,4 @@ public class Problem012 implements Problem {
 
         return count + (end*end == n ? 1:0);
     }
-
-	public Number solution() {
-		return 76576500;
-	}
 }

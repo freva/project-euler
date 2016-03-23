@@ -19,8 +19,4 @@ public class Problem003 implements Problem {
 
 		return largestFactor;
 	}
-
-	public Number solution() {
-		return 6859;
-	}
 }

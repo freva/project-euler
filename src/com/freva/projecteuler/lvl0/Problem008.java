@@ -25,7 +25,7 @@ public class Problem008 implements Problem {
         long largestProduct = 0;
 
 		for (int i=0; i < input.length(); i++) {
-            sequence = (sequence << 4) | (input.charAt(i)-48); //Push current digit into long, occupying the last 4 bits
+            sequence = (sequence << 4) | (input.charAt(i) - '0'); //Push current digit into long, occupying the last 4 bits
 
 			long product = 1;
             for (int j=0; j<sequenceLength; j++) { //Go through groups of 4 and 4 bits, multiplying them with each other
@@ -39,9 +39,4 @@ public class Problem008 implements Problem {
 
         return largestProduct;
 	}
-
-    @Override
-    public Number solution() {
-        return 23514624000L;
-    }
 }
