@@ -11,7 +11,7 @@ import java.util.List;
 
 public class Problem023 implements Problem {
 	public Number solve() {
-        final int LIMIT = 21124;
+        final int LIMIT = 21_124;
         final int[] sumOfDivisors = new int[LIMIT];
 
         for (int i=1; i < LIMIT/2; i++) {

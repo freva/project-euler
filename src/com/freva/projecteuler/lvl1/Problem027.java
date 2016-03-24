@@ -10,7 +10,7 @@ import com.freva.projecteuler.Problem;
 
 public class Problem027 implements Problem {
     public Number solve() {
-        final boolean[] isComposite = Functions.sieveOfEratosthenes(15000);
+        final boolean[] isComposite = Functions.sieveOfEratosthenes(15_000);
 
         int longest = 1;
         int productOfCoefficients = 0;

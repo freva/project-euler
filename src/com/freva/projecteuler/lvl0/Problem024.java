@@ -13,7 +13,7 @@ import java.util.Arrays;
 public class Problem024 implements Problem {
 	public Number solve() {
 		final ArrayList<Integer> digits = new ArrayList<>(Arrays.asList(0, 1, 2, 3, 4, 5, 6, 7, 8, 9));
-		int position = 999999;
+		int position = 999_999;
 
         long permutation = 0;
 		for(int n = digits.size(); n > 0; n--){

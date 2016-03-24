@@ -8,7 +8,7 @@ public class Functions {
     /**
      * Factorials for the first ten numbers (all single digits). TEN_FACTORIALS[3] = 3!
      */
-    public static final int[] TEN_FACTORIALS = new int[] {1, 1, 2, 6, 24, 120, 720, 5040, 40320, 362880};
+    public static final int[] TEN_FACTORIALS = new int[] {1, 1, 2, 6, 24, 120, 720, 5040, 40_320, 362_880};
 
 
     /**
@@ -110,6 +110,19 @@ public class Functions {
         return primes;
     }
 
+    /**
+     * Checks if number is 1 through n pandigital where n = length of number and is <= 9
+     */
+    public static boolean isPandigital(long number) {
+        int digits = 0;
+        int count = 1;
+
+        for (; number > 0; number /= 10, count++) {
+            digits |= 1 << (number % 10);
+        }
+
+        return digits == (1 << count) - 2;
+    }
 
     public static long sum(Collection<Integer> numbers) {
         long sum = 0;

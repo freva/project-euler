@@ -10,7 +10,7 @@ public class Problem002 implements Problem {
 	public Number solve() {
 		int sum=0;
 		
-		for(int i0=1, i1=1; i1<4000000; ) {
+		for(int i0=1, i1=1; i1 < 4_000_000; ) {
             int temp = i1;
             i1 += i0;
             i0 = temp;

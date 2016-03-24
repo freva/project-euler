@@ -8,11 +8,11 @@ import com.freva.projecteuler.Problem;
 
 public class Problem014 implements Problem {
 	public Number solve() {
-        final int LIMIT = 1000000;
-        final int[] cache = new int[LIMIT];
+        final int limit = 1_000_000;
+        final int[] cache = new int[limit];
 
         int largestCounter = 0, longestN = 0;
-		for (int n=1, counter; n<1000000; n++) {
+		for (int n=1, counter; n < limit; n++) {
 			long temp = n;
 
 			for (counter=0; temp!=1; counter++) {

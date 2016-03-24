@@ -8,10 +8,10 @@ import com.freva.projecteuler.Problem;
 
 public class Problem003 implements Problem {
 	public Number solve() {
-		long target = 600851475143L;
+		long target = 600_851_475_143L;
 		int largestFactor;
 		
-		for(largestFactor=3; target!=1; largestFactor+=2) {
+		for(largestFactor = 3; target != 1; largestFactor += 2) {
 			if(target % largestFactor == 0) {
 				target /= largestFactor;
 			}

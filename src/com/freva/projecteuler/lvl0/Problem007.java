@@ -12,7 +12,7 @@ public class Problem007 implements Problem {
         int candidate = 3;
         for (int numPrimes=1; true; candidate += 2) {
             if (Functions.isPrime(candidate)) {
-                if (++numPrimes == 10001) {
+                if (++numPrimes == 10_001) {
                     return candidate;
                 }
             }

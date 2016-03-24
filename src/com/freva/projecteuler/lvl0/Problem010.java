@@ -11,7 +11,7 @@ import java.util.List;
 
 public class Problem010 implements Problem {
 	public Number solve() {
-		List<Integer> primes = Functions.getPrimesBelow(2000000);
+		List<Integer> primes = Functions.getPrimesBelow(2_000_000);
 
         return Functions.sum(primes);
     }
