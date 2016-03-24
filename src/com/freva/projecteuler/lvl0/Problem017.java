@@ -16,7 +16,7 @@ public class Problem017 implements Problem {
 	public Number solve() {
         int total = 11; //Initialize to 11 for "one thousand"
 
-        for (int i=1; i<1000; i++) {
+        for (int i = 1; i < 1000; i++) {
             total += getNumberLength(i);
         }
 
