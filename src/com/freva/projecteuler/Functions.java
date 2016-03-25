@@ -8,7 +8,7 @@ public class Functions {
     /**
      * Factorials for the first ten numbers (all single digits). TEN_FACTORIALS[3] = 3!
      */
-    public static final int[] TEN_FACTORIALS = new int[] {1, 1, 2, 6, 24, 120, 720, 5040, 40_320, 362_880};
+    public static final int[] TEN_FACTORIALS = new int[] {1, 1, 2, 6, 24, 120, 720, 5040, 40_320, 362_880, 3_628_800};
 
 
     /**
@@ -79,6 +79,7 @@ public class Functions {
      */
     public static boolean[] sieveOfEratosthenes(int n) {
         final boolean[] isComposite = new boolean[n + 1];
+        isComposite[0] = isComposite[1] = true;
 
         for (int i=2; i*i <= n; i++) {
             if (! isComposite[i]) {
@@ -122,6 +123,39 @@ public class Functions {
         }
 
         return digits == (1 << count) - 2;
+    }
+
+    /**
+     * Checks if numbers contains some digit more than once
+     */
+    public static boolean hasDuplicateDigits(long number) {
+        for (int digits = 0, temp = 0; number > 0; temp = digits, number /= 10) {
+            digits |= 1 << (number % 10);
+            if (temp == digits) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    /**
+     * Concatenates digits to a single long
+     */
+    public static long concatenateDigits(int... digits) {
+        if (digits.length == 1) return digits[0];
+
+        long concatenated = digits[0];
+        for (int j = 1, temp; j < digits.length; j++) {
+            temp = digits[j];
+            while (temp > 0) {
+                temp /= 10;
+                concatenated *= 10;
+            }
+            concatenated += digits[j];
+        }
+
+        return concatenated;
     }
 
     public static long sum(Collection<Integer> numbers) {

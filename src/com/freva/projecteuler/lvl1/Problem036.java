@@ -11,8 +11,8 @@ public class Problem036 implements Problem {
     public Number solve() {
         int sum = 0;
 
-        for (long i = 1; i < 1000000; i += 2) {
-            if (i == Functions.reverseNumber(i)) {
+        for (long i = 1; i < 1_000_000; i += 2) {
+            if (Functions.isPalindrome(i)) {
                 if(i == reverseBinary(i)) {
                     sum += i;
                 }

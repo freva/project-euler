@@ -5,7 +5,7 @@ import com.freva.projecteuler.Problem;
 
 //Euler problem #32:
 //Find the sum of all products whose multiplicand/multiplier/product identity can be written as a 1 through 9 pandigital.
-//Answer: 45228, Time: 8ms
+//Answer: 45228, Time: 5ms
 
 public class Problem032 implements Problem {
     public Number solve() {
@@ -19,7 +19,7 @@ public class Problem032 implements Problem {
             for (int multiplier = 123, product; (product = multiplicand*multiplier) < 9876; multiplier++) {
                 if (countedProducts[product]) continue;
 
-                long candidate = concatenateDigits(multiplicand, multiplier, product);
+                long candidate = Functions.concatenateDigits(multiplicand, multiplier, product);
                 if (candidate >= limit && Functions.isPandigital(candidate)) {
                     countedProducts[product] = true;
                     sum += product;
@@ -28,17 +28,5 @@ public class Problem032 implements Problem {
         }
 
         return sum;
-    }
-
-    public static long concatenateDigits(int... digits) {
-        long concatenated = 0;
-        for (int digit : digits) {
-            for (int i = (int) Math.ceil(Math.log10(digit)); i > 0; i--) {
-                concatenated *= 10;
-            }
-            concatenated += digit;
-        }
-
-        return concatenated;
     }
 }
