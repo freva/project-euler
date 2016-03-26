@@ -95,4 +95,39 @@ public class Lvl1 {
     public void testProblem043Solution() {
         assertEquals(new Problem043().solve(), 16695334890L);
     }
+
+    @Test
+    public void testProblem044Solution() {
+        assertEquals(new Problem044().solve(), 5482660);
+    }
+
+    @Test
+    public void testProblem045Solution() {
+        assertEquals(new Problem045().solve(), 1533776805L);
+    }
+
+    @Test
+    public void testProblem046Solution() {
+        assertEquals(new Problem046().solve(), 5777);
+    }
+
+    @Test
+    public void testProblem047Solution() {
+        assertEquals(new Problem047().solve(), 134043);
+    }
+
+    @Test
+    public void testProblem048Solution() {
+        assertEquals(new Problem048().solve(), 9110846700L);
+    }
+
+    @Test
+    public void testProblem049Solution() {
+        assertEquals(new Problem049().solve(), 296962999629L);
+    }
+
+    @Test
+    public void testProblem050Solution() {
+        assertEquals(new Problem050().solve(), 997651);
+    }
 }

@@ -1,8 +1,7 @@
 package com.freva.projecteuler;
 
-import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
-import java.util.List;
 
 public class Functions {
     /**
@@ -98,17 +97,18 @@ public class Functions {
      * @param n largest number to consider for primes
      * @return List of primes <= n
     */
-    public static List<Integer> getPrimesBelow(int n) {
+    public static int[] getPrimesBelow(int n) {
         final boolean[] isComposite = sieveOfEratosthenes(n);
 
-        List<Integer> primes = new ArrayList<>((int) (n / (Math.log(n)-1)));
+        int index = 0;
+        final int[] primes = new int[(int) (n / (Math.log(n)-4))];
         for(int i = 2; i <= n; i++) {
             if (! isComposite[i]) {
-                primes.add(i);
+                primes[index++] = i;
             }
         }
 
-        return primes;
+        return Arrays.copyOfRange(primes, 0, index);
     }
 
     /**
@@ -158,7 +158,7 @@ public class Functions {
         return concatenated;
     }
 
-    public static long sum(Collection<Integer> numbers) {
+    public static long sum(int[] numbers) {
         long sum = 0;
         for(Integer number: numbers) {
             sum += number;
