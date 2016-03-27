@@ -8,8 +8,8 @@ import com.freva.projecteuler.Problem;
 //Answer: 142913828922, Time: 17ms
 
 public class Problem010 implements Problem {
-	public Number solve() {
-		int[] primes = Functions.getPrimesBelow(2_000_000);
+    public Number solve() {
+        int[] primes = Functions.getPrimesBelow(2_000_000);
 
         return Functions.sum(primes);
     }

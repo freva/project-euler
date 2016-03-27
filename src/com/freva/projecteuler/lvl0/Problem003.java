@@ -7,16 +7,16 @@ import com.freva.projecteuler.Problem;
 //Answer: 6859, Time: 0ms
 
 public class Problem003 implements Problem {
-	public Number solve() {
-		long target = 600_851_475_143L;
-		int largestFactor;
-		
-		for(largestFactor = 3; target != 1; largestFactor += 2) {
-			if(target % largestFactor == 0) {
-				target /= largestFactor;
-			}
-		}
+    public Number solve() {
+        long target = 600_851_475_143L;
+        int largestFactor;
 
-		return largestFactor;
-	}
+        for (largestFactor = 3; target != 1; largestFactor += 2) {
+            if (target % largestFactor == 0) {
+                target /= largestFactor;
+            }
+        }
+
+        return largestFactor;
+    }
 }

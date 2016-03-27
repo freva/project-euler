@@ -9,14 +9,14 @@ import java.math.BigInteger;
 //Answer: 1366, Time: 0ms
 
 public class Problem016 implements Problem {
-	public Number solve() {
-		String number = BigInteger.ONE.shiftLeft(1000).toString();
+    public Number solve() {
+        String number = BigInteger.ONE.shiftLeft(1000).toString();
 
-		int sumOfDigits=0;
-		for (char c : number.toCharArray()) {
-			sumOfDigits += c - '0';
-		}
-		
-		return sumOfDigits;
-	}
+        int sumOfDigits = 0;
+        for (char c : number.toCharArray()) {
+            sumOfDigits += c - '0';
+        }
+
+        return sumOfDigits;
+    }
 }

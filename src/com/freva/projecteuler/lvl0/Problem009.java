@@ -7,18 +7,18 @@ import com.freva.projecteuler.Problem;
 //Answer: 31875000, Time: 2ms
 
 public class Problem009 implements Problem {
-	public Number solve() {
+    public Number solve() {
         final int goal = 1000;
 
-		for (int a = 3; a < (goal-3)/3; a++) {
-			for (int b = a+1; b < (goal-a-1)/2; b++) {
-				int c = goal-a-b;
+        for (int a = 3; a < (goal - 3) / 3; a++) {
+            for (int b = a + 1; b < (goal - a - 1) / 2; b++) {
+                int c = goal - a - b;
 
-				if (a*a + b*b == c*c){
-                    return a*b*c;
-				}
-			}
-		}
+                if (a * a + b * b == c * c) {
+                    return a * b * c;
+                }
+            }
+        }
 
         return -1;
     }

@@ -11,19 +11,19 @@ import java.util.Arrays;
 //Answer: 2783915460, Time: 0ms
 
 public class Problem024 implements Problem {
-	public Number solve() {
-		final ArrayList<Integer> digits = new ArrayList<>(Arrays.asList(0, 1, 2, 3, 4, 5, 6, 7, 8, 9));
-		int position = 999_999;
+    public Number solve() {
+        final ArrayList<Integer> digits = new ArrayList<>(Arrays.asList(0, 1, 2, 3, 4, 5, 6, 7, 8, 9));
+        int position = 999_999;
 
         long permutation = 0;
-		for(int n = digits.size(); n > 0; n--){
-			int step = Functions.TEN_FACTORIALS[n-1];
-			int r = position/step;
-			position -= r*step;
-			
-			permutation = 10*permutation + digits.remove(r);
-		}
+        for (int n = digits.size(); n > 0; n--) {
+            int step = Functions.TEN_FACTORIALS[n - 1];
+            int r = position / step;
+            position -= r * step;
 
-		return permutation;
-	}
+            permutation = 10 * permutation + digits.remove(r);
+        }
+
+        return permutation;
+    }
 }

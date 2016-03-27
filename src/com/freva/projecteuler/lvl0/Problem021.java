@@ -7,11 +7,11 @@ import com.freva.projecteuler.Problem;
 //Answer: 31626, Time: 1ms
 
 public class Problem021 implements Problem {
-	public Number solve() {
+    public Number solve() {
         final int limit = 10_000;
         final int[] sumOfDivisors = new int[limit];
-		for (int i=1; i < limit/2; i++) {
-            for (int j = 2*i; j < limit; j += i) {
+        for (int i = 1; i < limit / 2; i++) {
+            for (int j = 2 * i; j < limit; j += i) {
                 sumOfDivisors[j] += i;
             }
         }

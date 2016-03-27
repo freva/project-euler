@@ -7,17 +7,17 @@ import com.freva.projecteuler.Problem;
 //Answer: 76576500, Time: 3ms
 
 public class Problem012 implements Problem {
-	public Number solve() {
+    public Number solve() {
         final int startTriangleNumber = 1;
 
         int prevNumOfDivisors = numberOfDivisors(startTriangleNumber);
-		for (int i=startTriangleNumber+1; ; i++) {
-            int currentNumOfDivisors = numberOfDivisors((i&1) == 1 ? i : i/2);
+        for (int i = startTriangleNumber + 1; ; i++) {
+            int currentNumOfDivisors = numberOfDivisors((i & 1) == 1 ? i : i / 2);
             int numOfDivisors = prevNumOfDivisors * currentNumOfDivisors;
 
             prevNumOfDivisors = currentNumOfDivisors;
             if (numOfDivisors > 500) {
-                return (i-1)*i/2;
+                return (i - 1) * i / 2;
             }
         }
     }
@@ -31,6 +31,6 @@ public class Problem012 implements Problem {
             }
         }
 
-        return count + (end*end == n ? 1:0);
+        return count + (end * end == n ? 1 : 0);
     }
 }

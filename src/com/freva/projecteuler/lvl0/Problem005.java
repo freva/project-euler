@@ -8,13 +8,13 @@ import com.freva.projecteuler.Problem;
 //Answer: 232792560, Time: 0ms
 
 public class Problem005 implements Problem {
-	public Number solve() {
-		long answer = 1;
+    public Number solve() {
+        long answer = 1;
 
-        for(int i=1; i<=20; i++) {
+        for (int i = 1; i <= 20; i++) {
             answer = Functions.leastCommonMultiple(answer, i);
         }
 
         return answer;
-	}
+    }
 }

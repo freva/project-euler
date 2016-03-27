@@ -7,11 +7,11 @@ import com.freva.projecteuler.Problem;
 //Answer: 25164150, Time: 0ms
 
 public class Problem006 implements Problem {
-	public Number solve(){
-		int n = 100;
-        int sum = n * (n+1) / 2;
-        int sumOfSquares = n * (n+1) * (2*n+1) / 6;
+    public Number solve() {
+        int n = 100;
+        int sum = n * (n + 1) / 2;
+        int sumOfSquares = n * (n + 1) * (2 * n + 1) / 6;
 
-		return sum*sum - sumOfSquares;
-	}
+        return sum * sum - sumOfSquares;
+    }
 }

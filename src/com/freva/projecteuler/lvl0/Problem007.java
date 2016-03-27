@@ -8,9 +8,9 @@ import com.freva.projecteuler.Problem;
 //Answer: 104743, Time: 9ms
 
 public class Problem007 implements Problem {
-	public Number solve() {
+    public Number solve() {
         int candidate = 3;
-        for (int numPrimes=1; true; candidate += 2) {
+        for (int numPrimes = 1; ; candidate += 2) {
             if (Functions.isPrime(candidate)) {
                 if (++numPrimes == 10_001) {
                     return candidate;

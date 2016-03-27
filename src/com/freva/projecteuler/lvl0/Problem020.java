@@ -9,7 +9,7 @@ import java.math.BigInteger;
 //Answer: 648, Time: 0ms
 
 public class Problem020 implements Problem {
-	public Number solve() {
+    public Number solve() {
         BigInteger fac100 = BigInteger.ONE;
         for (int i = 2; i <= 100; i++) {
             fac100 = fac100.multiply(BigInteger.valueOf(i));
@@ -20,6 +20,6 @@ public class Problem020 implements Problem {
             sumOfDigits += c - '0';
         }
 
-		return sumOfDigits;
-	}
+        return sumOfDigits;
+    }
 }

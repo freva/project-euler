@@ -13,7 +13,7 @@ public class Problem017 implements Problem {
     private static final int[] tens = {0, 0, 6, 6, 5, 5, 5, 7, 6, 6};
 
 
-	public Number solve() {
+    public Number solve() {
         int total = 11; //Initialize to 11 for "one thousand"
 
         for (int i = 1; i < 1000; i++) {
@@ -21,19 +21,19 @@ public class Problem017 implements Problem {
         }
 
         return total;
-	}
+    }
 
     private static int getNumberLength(int number) {
         int length = 0;
 
         //Add length of the tens + last digit / last two digits if <20:
-        final int lastTwoDigits = number%100;
-        length += (lastTwoDigits < 20) ? firstTwenty[lastTwoDigits] : tens[lastTwoDigits/10] + firstTwenty[lastTwoDigits%10];
+        final int lastTwoDigits = number % 100;
+        length += (lastTwoDigits < 20) ? firstTwenty[lastTwoDigits] : tens[lastTwoDigits / 10] + firstTwenty[lastTwoDigits % 10];
 
         //Add hundreds if present:
         if (number >= 100) {
             //Add 7 for "hundred", if lastTwoDigits is any other number than two, we also need to add 3 for "and"
-            length += firstTwenty[number/100] + 7 + (lastTwoDigits != 0 ? 3 : 0);
+            length += firstTwenty[number / 100] + 7 + (lastTwoDigits != 0 ? 3 : 0);
         }
 
         return length;

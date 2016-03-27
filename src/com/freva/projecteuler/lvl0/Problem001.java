@@ -7,14 +7,14 @@ import com.freva.projecteuler.Problem;
 //Answer: 233168, Time: 0ms
 
 public class Problem001 implements Problem {
-	public Number solve() {
-		int sum = 0;
-		for(int i=2; i<1000; i++) {
-			if(i % 3 == 0 || i % 5 == 0) {
-				sum += i;
-			}
-		}
+    public Number solve() {
+        int sum = 0;
+        for (int i = 2; i < 1000; i++) {
+            if (i % 3 == 0 || i % 5 == 0) {
+                sum += i;
+            }
+        }
 
-		return sum;
-	}
+        return sum;
+    }
 } 

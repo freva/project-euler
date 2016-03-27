@@ -7,19 +7,19 @@ import com.freva.projecteuler.Problem;
 //Answer: 4613732, Time: 0ms
 
 public class Problem002 implements Problem {
-	public Number solve() {
-		int sum=0;
-		
-		for(int i0=1, i1=1; i1 < 4_000_000; ) {
+    public Number solve() {
+        int sum = 0;
+
+        for (int i0 = 1, i1 = 1; i1 < 4_000_000; ) {
             int temp = i1;
             i1 += i0;
             i0 = temp;
 
-			if(i0%2 == 0) {
-				sum += i0;
-			}
-		}
-		
-		return sum;
-	}
+            if (i0 % 2 == 0) {
+                sum += i0;
+            }
+        }
+
+        return sum;
+    }
 }
