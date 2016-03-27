@@ -78,6 +78,19 @@ public class Functions {
         return true;
     }
 
+
+    public static long modPow(long x, long c, long m) {
+        long result = 1;
+        while (c > 0) {
+            if ((c & 1) == 1) {
+                result = (result * x) % m;
+            }
+            x = (x * x) % m;
+            c >>= 1;
+        }
+        return result;
+    }
+
     /**
      * Generates an array of length n + 1 where i'th index is set to true if i is composite and false if i is prime
      */
