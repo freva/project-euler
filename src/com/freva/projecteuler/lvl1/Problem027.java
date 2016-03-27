@@ -15,16 +15,16 @@ public class Problem027 implements Problem {
         int longest = 1;
         int productOfCoefficients = 0;
         for (int b = 2; b < 1000; b++) {
-            if(isComposite[b]) continue;
+            if (isComposite[b]) continue;
 
-            for (int a = -(longest*longest + b) / longest; a < 1000; a++) {
+            for (int a = -(longest * longest + b) / longest; a < 1000; a++) {
                 int n = 0;
 
-                for(int prime = b; prime > 0 && ! isComposite[prime]; n++) {
-                    prime = n*n + a*n + b;
+                for (int prime = b; prime > 0 && !isComposite[prime]; n++) {
+                    prime = n * n + a * n + b;
                 }
 
-                if(n > longest){
+                if (n > longest) {
                     longest = n;
                     productOfCoefficients = a * b;
                 }

@@ -1,13 +1,18 @@
 package com.freva.projecteuler;
 
 import java.util.Arrays;
-import java.util.Collection;
 
 public class Functions {
     /**
      * Factorials for the first ten numbers (all single digits). TEN_FACTORIALS[3] = 3!
      */
     public static final int[] TEN_FACTORIALS = new int[] {1, 1, 2, 6, 24, 120, 720, 5040, 40_320, 362_880, 3_628_800};
+
+    /**
+     * Contains the ten first prime numbers
+     */
+    public static final int[] TEN_PRIMES = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29};
+
 
 
     /**
@@ -112,6 +117,22 @@ public class Functions {
     }
 
     /**
+     * Gets the n first prime numbers using sieveOfEratosthenes() with upper limit at n * (log(n) + log(log(n)))
+     */
+    public static int[] getNPrimes(int n) {
+        final boolean[] isComposite = sieveOfEratosthenes((int) (n * (Math.log(n) + Math.log(Math.log(n)))));
+
+        final int[] primes = new int[n + 1];
+        for(int i = 2, index = 0; index <= n; i++) {
+            if (! isComposite[i]) {
+                primes[index++] = i;
+            }
+        }
+
+        return primes;
+    }
+
+    /**
      * Checks if number is 1 through n pandigital where n = length of number and is <= 9
      */
     public static boolean isPandigital(long number) {
@@ -156,6 +177,31 @@ public class Functions {
         }
 
         return concatenated;
+    }
+
+    /**
+     * Checks if the numbers are digit permultations of each other, f.ex. 123, 231, 312 => true, 1234, 3244 => false
+     */
+    public static boolean arePermutationsOfEachOther(int... numbers) {
+        final int firstSignature = getNumberSignature(numbers[0]);
+
+        for (int i = 1; i<numbers.length; i++) {
+            if (firstSignature != getNumberSignature(numbers[i])) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    private static int getNumberSignature(int number) {
+        int signature = 1;
+        while (number > 0) {
+            signature *= TEN_PRIMES[number % 10];
+            number /= 10;
+        }
+
+        return signature;
     }
 
     public static long sum(int[] numbers) {

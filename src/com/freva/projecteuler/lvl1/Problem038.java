@@ -12,9 +12,9 @@ public class Problem038 implements Problem {
     public Number solve() {
         //Enough to search only 4 digit starting with 9. 9500+ will lead to 2*i = 19xxx, giving 2 9s
         for (int i = 9476; ; i--) {
-            long val = Functions.concatenateDigits(i, 2*i);
+            long val = Functions.concatenateDigits(i, 2 * i);
 
-            if(Functions.isPandigital(val)) {
+            if (Functions.isPandigital(val)) {
                 return val;
             }
         }

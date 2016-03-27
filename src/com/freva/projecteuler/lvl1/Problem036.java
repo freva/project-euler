@@ -13,7 +13,7 @@ public class Problem036 implements Problem {
 
         for (long i = 1; i < 1_000_000; i += 2) {
             if (Functions.isPalindrome(i)) {
-                if(i == reverseBinary(i)) {
+                if (i == reverseBinary(i)) {
                     sum += i;
                 }
             }

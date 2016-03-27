@@ -17,16 +17,16 @@ public class Problem044 implements Problem {
             //We know that m > n, so D = P(n+i) - P(n) = (n+i)*(3*(n+i)+1)/2 - i*(3*i+1)/2, solving for n gives:
             //n = ((2*D)/i - 3*i - 1) / 6. Now we loop over i increasing it until we get n < 1
             for (int i = 1; ; i++) {
-                int t = 2*pentagonalDifference - i*(3*i - 1);
-                int a = t / (6*i);
+                int t = 2 * pentagonalDifference - i * (3 * i - 1);
+                int n = t / (6 * i);
 
-                if (a < 1) break;
-                if (6*a*i != t) continue;
+                if (n < 1) break;
+                if (6 * n * i != t) continue;
 
-                int pa = getPentagonal(a);
-                int pb = pentagonalDifference + pa;
+                int pentagonalLower = getPentagonal(n);
+                int pentagonalUpper = pentagonalDifference + pentagonalLower;
 
-                int pentagonalSum = pa + pb;
+                int pentagonalSum = pentagonalLower + pentagonalUpper;
                 if (isPentagonal(pentagonalSum)) {
                     return pentagonalDifference;
                 }
@@ -35,7 +35,7 @@ public class Problem044 implements Problem {
     }
 
     private static int getPentagonal(int n) {
-        return n * (3*n - 1) / 2;
+        return n * (3 * n - 1) / 2;
     }
 
     //Solving P = n(3n−1) / 2 for n gives:

@@ -8,20 +8,20 @@ import com.freva.projecteuler.Problem;
 //Answer: 55, Time: 17ms
 
 public class Problem035 implements Problem {
-	public Number solve() {
+    public Number solve() {
         final boolean[] isComposite = Functions.sieveOfEratosthenes(1_000_000);
 
-		int numberOfCircularPrimes = 0;
-		for (int i = 2; i < isComposite.length; i++) {
+        int numberOfCircularPrimes = 0;
+        for (int i = 2; i < isComposite.length; i++) {
             if (isComposite[i]) continue;
 
-			if (isCircularPrime(i, isComposite)) {
+            if (isCircularPrime(i, isComposite)) {
                 numberOfCircularPrimes++;
             }
         }
-		
-		return numberOfCircularPrimes;
-	}
+
+        return numberOfCircularPrimes;
+    }
 
     private static boolean isCircularPrime(int prime, boolean[] isComposite) {
         final int tenPower = (int) Math.pow(10, Math.floor(Math.log10(prime)));
@@ -31,7 +31,7 @@ public class Problem035 implements Problem {
             candidate = tenPower * (candidate % 10) + candidate / 10; //Rotate the number
 
             if (isComposite[candidate]) return false;
-        } while(candidate != prime);
+        } while (candidate != prime);
 
         return true;
     }

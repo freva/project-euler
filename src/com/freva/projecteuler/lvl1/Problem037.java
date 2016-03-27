@@ -13,7 +13,7 @@ public class Problem037 implements Problem {
 
         int sum = 0;
         for (int num = 11; num < isComposite.length; num++) {
-            if (! isComposite[num] && isTruncatable(num, isComposite)) {
+            if (!isComposite[num] && isTruncatable(num, isComposite)) {
                 sum += num;
             }
         }

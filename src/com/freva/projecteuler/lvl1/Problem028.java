@@ -7,15 +7,15 @@ import com.freva.projecteuler.Problem;
 //Answer: 669171001, Time: 0ms
 
 public class Problem028 implements Problem {
-	public Number solve() {
-		int sumOfDiagonals = 1;
-		for (int gapBetweenCorners = 2, diagonalNumber = 1; gapBetweenCorners <= 1000; gapBetweenCorners += 2) {
-			for (int j = 0; j < 4; j++) {
-				diagonalNumber += gapBetweenCorners;
-				sumOfDiagonals += diagonalNumber;
-			}
-		}
-		
-		return sumOfDiagonals;
-	}
+    public Number solve() {
+        int sumOfDiagonals = 1;
+        for (int gapBetweenCorners = 2, diagonalNumber = 1; gapBetweenCorners <= 1000; gapBetweenCorners += 2) {
+            for (int j = 0; j < 4; j++) {
+                diagonalNumber += gapBetweenCorners;
+                sumOfDiagonals += diagonalNumber;
+            }
+        }
+
+        return sumOfDiagonals;
+    }
 }

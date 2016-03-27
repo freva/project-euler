@@ -8,19 +8,19 @@ import com.freva.projecteuler.Problem;
 //Answer: 210, Time: 0ms
 
 public class Problem040 implements Problem {
-	public Number solve() {
+    public Number solve() {
         return getDigit(10) * getDigit(100) * getDigit(1000) * getDigit(10_000) * getDigit(100_000) * getDigit(1_000_000);
     }
-	    
-	private static int getDigit(int n){
-		int base = 1, digitsPerNumber = 1;
-		
-		for(; n > 9*digitsPerNumber*base; base *= 10, digitsPerNumber++) {
+
+    private static int getDigit(int n) {
+        int base = 1, digitsPerNumber = 1;
+
+        for (; n > 9 * digitsPerNumber * base; base *= 10, digitsPerNumber++) {
             n -= 9 * digitsPerNumber * base;
         }
-		
-		int numberOrder = (n-1) / digitsPerNumber;
-		int digitOrder = (n-1) % digitsPerNumber;
+
+        int numberOrder = (n - 1) / digitsPerNumber;
+        int digitOrder = (n - 1) % digitsPerNumber;
         return String.valueOf(base + numberOrder).charAt(digitOrder) - '0';
-	}
+    }
 }

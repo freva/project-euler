@@ -8,27 +8,27 @@ import com.freva.projecteuler.Problem;
 //Answer: 983, Time: 0ms
 
 public class Problem026 implements Problem {
-	public Number solve() {
+    public Number solve() {
         int longestCycleDivisor = 0;
         int longestCycleLength = 0;
 
-		for (int d = 999, temp; d > longestCycleLength; d--) {
+        for (int d = 999, temp; d > longestCycleLength; d--) {
             if (Functions.greatestCommonDivisor(10, d) != 1) continue;
-			if ((temp = recurringCycleLength(d)) > longestCycleLength) {
-				longestCycleLength = temp;
-				longestCycleDivisor = d;
-			}
+            if ((temp = recurringCycleLength(d)) > longestCycleLength) {
+                longestCycleLength = temp;
+                longestCycleDivisor = d;
+            }
         }
 
         return longestCycleDivisor;
-	}
+    }
 
-	private static int recurringCycleLength(int d) {
+    private static int recurringCycleLength(int d) {
         int cycleLength = 0;
         for (int remainder = 10; remainder != 1; cycleLength++) {
             remainder = (remainder * 10) % d;
         }
 
-		return cycleLength;
-	}
+        return cycleLength;
+    }
 }

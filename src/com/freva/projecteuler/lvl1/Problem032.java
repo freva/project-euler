@@ -14,9 +14,9 @@ public class Problem032 implements Problem {
 
         int sum = 0;
         for (int multiplicand = 2; multiplicand < 99; multiplicand++) {
-            if(multiplicand%10 == 0 || multiplicand%11 == 0) continue;
+            if (multiplicand % 10 == 0 || multiplicand % 11 == 0) continue;
 
-            for (int multiplier = 123, product; (product = multiplicand*multiplier) < 9876; multiplier++) {
+            for (int multiplier = 123, product; (product = multiplicand * multiplier) < 9876; multiplier++) {
                 if (countedProducts[product]) continue;
 
                 long candidate = Functions.concatenateDigits(multiplicand, multiplier, product);

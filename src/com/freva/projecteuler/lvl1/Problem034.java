@@ -8,23 +8,23 @@ import com.freva.projecteuler.Problem;
 //Answer: 40730, Time: 3ms
 
 public class Problem034 implements Problem {
-	public Number solve() {
-		int sum = 0;
+    public Number solve() {
+        int sum = 0;
 
-		for (int n = 10; n < 50_000; n++) {
+        for (int n = 10; n < 50_000; n++) {
             int candidate = n;
             int factorialDigitSum = 0;
 
-			while (candidate > 0) {
+            while (candidate > 0) {
                 factorialDigitSum += Functions.TEN_FACTORIALS[candidate % 10];
                 candidate /= 10;
-			}
+            }
 
-			if(factorialDigitSum == n) {
+            if (factorialDigitSum == n) {
                 sum += n;
             }
-		}
+        }
 
-		return sum;
-	}
+        return sum;
+    }
 }

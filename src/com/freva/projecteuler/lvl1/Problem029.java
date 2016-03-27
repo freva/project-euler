@@ -9,9 +9,9 @@ import java.util.HashSet;
 //Answer: 9183, Time: 3ms
 
 public class Problem029 implements Problem {
-	public Number solve() {
+    public Number solve() {
         final int limit = 100;
-        final boolean[] overlaps = new boolean[limit+1];
+        final boolean[] overlaps = new boolean[limit + 1];
         final HashSet<Double> powers = new HashSet<>();
 
         for (int a = 2; a <= limit; a++) {
@@ -22,12 +22,12 @@ public class Problem029 implements Problem {
 
         int numberOfDuplicates = 0;
         for (int a = 2; a <= 100; a++) {
-            if (! overlaps[a]) continue;
+            if (!overlaps[a]) continue;
             for (int b = 2; b <= 100; b++, numberOfDuplicates++) {
                 powers.add(Math.pow(a, b));
             }
         }
 
-		return 99*99 - numberOfDuplicates + powers.size();
-	}
+        return 99 * 99 - numberOfDuplicates + powers.size();
+    }
 }

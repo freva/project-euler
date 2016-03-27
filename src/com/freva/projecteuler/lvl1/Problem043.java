@@ -26,7 +26,7 @@ public class Problem043 implements Problem {
                 for (int nextDigit = 0; nextDigit <= 9; nextDigit++) {
                     final int threeDigits = nextDigit * 100 + lastDigits;
                     final int fullNumber = nextDigit * pow10 * 100 + incomplete;
-                    if (threeDigits % primes[i] == 0 && ! Functions.hasDuplicateDigits(fullNumber)) {
+                    if (threeDigits % primes[i] == 0 && !Functions.hasDuplicateDigits(fullNumber)) {
                         generatedNumbers[count++] = fullNumber;
                     }
                 }
@@ -38,7 +38,7 @@ public class Problem043 implements Problem {
         for (int incomplete : incompleteNumbers) {
             long complete = getMissingDigit(incomplete) * 1000000000L + incomplete;
 
-            if (! Functions.hasDuplicateDigits(complete)) {
+            if (!Functions.hasDuplicateDigits(complete)) {
                 sum += complete;
             }
         }

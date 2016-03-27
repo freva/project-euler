@@ -8,12 +8,12 @@ import com.freva.projecteuler.Problem;
 //Answer: 7652413, Time: 1ms
 
 public class Problem041 implements Problem {
-	public Number solve() {
+    public Number solve() {
         //Cannot be 9 or 8 digit long pandigital prime as 1+2+3+4+5+6+7+8(+9) % 3 == 0
-		for (int candidate = 7654321; ; candidate -= 2) {
+        for (int candidate = 7654321; ; candidate -= 2) {
             if (Functions.isPandigital(candidate) && Functions.isPrime(candidate)) {
                 return candidate;
             }
-		}
-	}
+        }
+    }
 }
