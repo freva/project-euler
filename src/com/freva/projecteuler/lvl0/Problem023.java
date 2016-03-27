@@ -3,7 +3,6 @@ package com.freva.projecteuler.lvl0;
 import com.freva.projecteuler.Problem;
 
 import java.util.ArrayList;
-import java.util.List;
 
 //Euler problem #23:
 //Find the sum of all the positive integers which cannot be written as the sum of two abundant numbers.
@@ -20,7 +19,7 @@ public class Problem023 implements Problem {
             }
         }
 
-        final List<Integer> abundantNumbers = new ArrayList<>(LIMIT / 3);
+        final ArrayList<Integer> abundantNumbers = new ArrayList<>(LIMIT / 3);
         for (int m = 12; m < LIMIT; m++) {
             if (sumOfDivisors[m] > m) {
                 abundantNumbers.add(m);

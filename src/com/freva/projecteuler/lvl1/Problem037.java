@@ -22,7 +22,7 @@ public class Problem037 implements Problem {
     }
 
 
-    public static boolean isTruncatable(int num, boolean[] isComposite) {
+    private static boolean isTruncatable(int num, boolean[] isComposite) {
         for (int temp = num; temp > 0; temp /= 10) {
             if (isComposite[temp]) {
                 return false;

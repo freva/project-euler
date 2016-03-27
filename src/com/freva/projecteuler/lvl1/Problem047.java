@@ -28,7 +28,7 @@ public class Problem047 implements Problem {
         }
     }
 
-    public static int noOfDistinctPrimeFactors(int n) {
+    private static int noOfDistinctPrimeFactors(int n) {
         int numDistinctFactors = 0;
         double limit = Math.sqrt(n);
         for (int i = 2; n > 1 && i < limit; i++) {
@@ -46,7 +46,7 @@ public class Problem047 implements Problem {
         return numDistinctFactors + (n > 1 ? 1 : 0);
     }
 
-    public static boolean[] getMultiComposites(int n) {
+    private static boolean[] getMultiComposites(int n) {
         final boolean[] isTwoOrMoreComposite = Functions.sieveOfEratosthenes(n);
 
         for (int i = 2; i * i <= n; i++) {
