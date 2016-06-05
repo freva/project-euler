@@ -126,5 +126,3 @@ public class Problem054 implements Problem {
         return distribution <= (1 << 12) && (distribution >> Long.numberOfTrailingZeros(distribution)) == 31;
     }
 }
-
-//#52.0ms

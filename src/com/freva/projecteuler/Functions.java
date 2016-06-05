@@ -1,5 +1,6 @@
 package com.freva.projecteuler;
 
+import java.math.BigInteger;
 import java.util.Arrays;
 
 public class Functions {
@@ -193,10 +194,10 @@ public class Functions {
     }
 
     /**
-     * Checks if the numbers are digit permultations of each other, f.ex. 123, 231, 312 => true, 1234, 3244 => false
+     * Checks if the numbers are digit permutations of each other, f.ex. 123, 231, 312 => true, 1234, 3244 => false
      */
     public static boolean arePermutationsOfEachOther(int... numbers) {
-        final int firstSignature = getNumberSignature(numbers[0]);
+        final long firstSignature = getNumberSignature(numbers[0]);
 
         for (int i = 1; i<numbers.length; i++) {
             if (firstSignature != getNumberSignature(numbers[i])) {
@@ -207,10 +208,10 @@ public class Functions {
         return true;
     }
 
-    private static int getNumberSignature(int number) {
-        int signature = 1;
+    public static long getNumberSignature(long number) {
+        long signature = 1;
         while (number > 0) {
-            signature *= TEN_PRIMES[number % 10];
+            signature *= TEN_PRIMES[(int) (number % 10)];
             number /= 10;
         }
 
@@ -224,5 +225,14 @@ public class Functions {
         }
 
         return sum;
+    }
+
+    public static int sumOfDigits(BigInteger bigInteger) {
+        int sumOfDigits = 0;
+        for (char c : bigInteger.toString().toCharArray()) {
+            sumOfDigits += c - '0';
+        }
+
+        return sumOfDigits;
     }
 }

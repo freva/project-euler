@@ -1,5 +1,6 @@
 package com.freva.projecteuler.lvl2;
 
+import com.freva.projecteuler.Functions;
 import com.freva.projecteuler.Problem;
 
 import java.math.BigInteger;
@@ -14,11 +15,7 @@ public class Problem056 implements Problem {
         for (int a = 90; a < 100; a++) {
             for (int b = 90; b < 100; b++) {
                 BigInteger aPowB = BigInteger.valueOf(a).pow(b);
-                int digitSum = 0;
-
-                for (char c : aPowB.toString().toCharArray()) {
-                    digitSum += c - '0';
-                }
+                int digitSum = Functions.sumOfDigits(aPowB);
 
                 if (digitSum > largestDigitSum) {
                     largestDigitSum = digitSum;

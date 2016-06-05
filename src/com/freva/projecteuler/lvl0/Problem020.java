@@ -1,5 +1,6 @@
 package com.freva.projecteuler.lvl0;
 
+import com.freva.projecteuler.Functions;
 import com.freva.projecteuler.Problem;
 
 import java.math.BigInteger;
@@ -15,11 +16,6 @@ public class Problem020 implements Problem {
             fac100 = fac100.multiply(BigInteger.valueOf(i));
         }
 
-        int sumOfDigits = 0;
-        for (char c : fac100.toString().toCharArray()) {
-            sumOfDigits += c - '0';
-        }
-
-        return sumOfDigits;
+        return Functions.sumOfDigits(fac100);
     }
 }
