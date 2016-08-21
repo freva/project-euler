@@ -45,4 +45,89 @@ public class Lvl2 {
     public void testProblem058Solution() {
         assertEquals(new Problem058().solve(), 26241);
     }
+
+    @Test
+    public void testProblem059Solution() {
+        assertEquals(new Problem059().solve(), 107359);
+    }
+
+    @Test
+    public void testProblem060Solution() {
+        assertEquals(new Problem060().solve(), 26033);
+    }
+
+    @Test
+    public void testProblem061Solution() {
+        assertEquals(new Problem061().solve(), 28684);
+    }
+
+    @Test
+    public void testProblem062Solution() {
+        assertEquals(new Problem062().solve(), 127035954683L);
+    }
+
+    @Test
+    public void testProblem063Solution() {
+        assertEquals(new Problem063().solve(), 49);
+    }
+
+    @Test
+    public void testProblem064Solution() {
+        assertEquals(new Problem064().solve(), 1322);
+    }
+
+    @Test
+    public void testProblem065Solution() {
+        assertEquals(new Problem065().solve(), 272);
+    }
+
+    @Test
+    public void testProblem066Solution() {
+        assertEquals(new Problem066().solve(), 661);
+    }
+
+    @Test
+    public void testProblem067Solution() {
+        assertEquals(new Problem067().solve(), 7273);
+    }
+
+    @Test
+    public void testProblem068Solution() {
+        assertEquals(new Problem068().solve(), 6531031914842725L);
+    }
+
+    @Test
+    public void testProblem069Solution() {
+        assertEquals(new Problem069().solve(), 510510);
+    }
+
+    @Test
+    public void testProblem070Solution() {
+        assertEquals(new Problem070().solve(), 8319823);
+    }
+
+    @Test
+    public void testProblem071Solution() {
+        assertEquals(new Problem071().solve(), 428570);
+    }
+
+    @Test
+    public void testProblem072Solution() {
+        assertEquals(new Problem072().solve(), 303963552391L);
+    }
+
+    @Test
+    public void testProblem073Solution() {
+        assertEquals(new Problem073().solve(), 7295372L);
+    }
+
+    @Test
+    public void testProblem074Solution() {
+        assertEquals(new Problem074().solve(), 402);
+    }
+
+    @Test
+    public void testProblem075Solution() {
+        assertEquals(new Problem075().solve(), 161667);
+    }
 }
