@@ -3,9 +3,14 @@ package com.freva.projecteuler.lvl1;
 import com.freva.projecteuler.Functions;
 import com.freva.projecteuler.Problem;
 
-//Euler problem #36:
-//Find the sum of all numbers, less than one million, which are palindromic in base 10 and base 2.
-//Answer: 872187, Time: 9ms
+/**
+ * Project Euler problem #036:
+ * Answer: 872187, Time: 9ms
+ *
+ * The decimal number, 585 = 10010010012 (binary), is palindromic in both bases.
+ * Find the sum of all numbers, less than one million, which are palindromic in base 10 and base 2.
+ * NOTE: The palindromic number, in either base, may not include leading zeros.
+ */
 
 public class Problem036 implements Problem {
     public Number solve() {

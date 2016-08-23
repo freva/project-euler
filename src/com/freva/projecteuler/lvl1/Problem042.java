@@ -5,9 +5,19 @@ import com.freva.projecteuler.Problem;
 import java.io.BufferedReader;
 import java.io.FileReader;
 
-//Euler problem #42:
-//How many triangle words does the list of common English words contain?
-//Answer: 162, Time: 2ms
+/**
+ * Project Euler problem #042:
+ * Answer: 162, Time: 2ms
+ *
+ * The nth term of the sequence of triangle numbers is given by, tn = n(n+1)/2; so the first ten triangle numbers are:
+ * 1, 3, 6, 10, 15, 21, 28, 36, 45, 55, ...
+ *
+ * By converting each letter in a word to a number corresponding to its alphabetical position and adding these values
+ * we form a word value. For example, the word value for SKY is 19 + 11 + 25 = 55 = t10. If the word value is a
+ * triangle number then we shall call the word a triangle word.
+ *
+ * Using the file res/042.txt, containing nearly two-thousand common English words, how many are triangle words?
+ */
 
 public class Problem042 implements Problem {
     public Number solve() {
@@ -27,7 +37,7 @@ public class Problem042 implements Problem {
         for (String name : names) {
             int sum = 0;
             for (int j = 1; j < name.length() - 1; j++) {
-                sum += name.charAt(j) - 64;
+                sum += name.charAt(j) - 'A' + 1;
             }
 
             if (triangleNumbers[sum]) {
