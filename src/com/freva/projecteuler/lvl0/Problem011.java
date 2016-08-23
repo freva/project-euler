@@ -2,9 +2,14 @@ package com.freva.projecteuler.lvl0;
 
 import com.freva.projecteuler.Problem;
 
-//Euler problem #11:
-//What is the greatest product of four adjacent numbers in any direction (up, down, left, right, or diagonally) in the 20x20 grid?
-//Answer: 70600674, Time: 0ms
+
+/**
+ * Project Euler problem #011:
+ * Answer: 70600674, Time: 0ms
+ *
+ * What is the greatest product of four adjacent numbers in the same direction (up, down, left, right, or diagonally)
+ * in the 20×20 grid?
+ */
 
 public class Problem011 implements Problem {
     public Number solve() {
@@ -31,29 +36,29 @@ public class Problem011 implements Problem {
                 { 1, 70, 54, 71, 83, 51, 54, 69, 16, 92, 33, 48, 61, 43, 52,  1, 89, 19, 67, 48}};
 
 
-        int highest = 0;
+        int greatestProduct = 0;
         for (int i = 0; i < 20; i++) {
             for (int j = 0; j <= 16; j++) {
-                int tempHor = a[i][j] * a[i][j + 1] * a[i][j + 2] * a[i][j + 3];
-                int tempVer = a[j][i] * a[j + 1][i] * a[j + 2][i] * a[j + 3][i];
+                int horizontalProduct = a[i][j] * a[i][j + 1] * a[i][j + 2] * a[i][j + 3];
+                int verticalProduct = a[j][i] * a[j + 1][i] * a[j + 2][i] * a[j + 3][i];
 
-                if (tempHor > highest || tempVer > highest) {
-                    highest = Math.max(tempHor, tempVer);
+                if (horizontalProduct > greatestProduct || verticalProduct > greatestProduct) {
+                    greatestProduct = Math.max(horizontalProduct, verticalProduct);
                 }
             }
         }
 
         for (int i = 0; i <= 16; i++) {
             for (int j = 0; j <= 16; j++) {
-                int tempFDiag = a[i][j] * a[i + 1][j + 1] * a[i + 2][j + 2] * a[i + 3][j + 3];
-                int tempBDiag = a[i + 3][j] * a[i + 2][j + 1] * a[i + 1][j + 2] * a[i][j + 3];
+                int bottomRightDiagonalProduct = a[i][j] * a[i + 1][j + 1] * a[i + 2][j + 2] * a[i + 3][j + 3];
+                int topRightDiagonalProduct = a[i + 3][j] * a[i + 2][j + 1] * a[i + 1][j + 2] * a[i][j + 3];
 
-                if (tempFDiag > highest || tempBDiag > highest) {
-                    highest = Math.max(tempFDiag, tempBDiag);
+                if (bottomRightDiagonalProduct > greatestProduct || topRightDiagonalProduct > greatestProduct) {
+                    greatestProduct = Math.max(bottomRightDiagonalProduct, topRightDiagonalProduct);
                 }
             }
         }
 
-        return highest;
+        return greatestProduct;
     }
 }

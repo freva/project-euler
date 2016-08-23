@@ -1,7 +1,7 @@
 package com.freva.projecteuler;
 
 public class MillerRabin {
-    //Deterministic up to 4,759,123,141
+    // Deterministic up to 4,759,123,141
     private static int[] getPrimesToTest(long n) {
         if (n < 2047) {
             return new int[]{2};

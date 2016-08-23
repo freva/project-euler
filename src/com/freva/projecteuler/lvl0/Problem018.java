@@ -2,9 +2,12 @@ package com.freva.projecteuler.lvl0;
 
 import com.freva.projecteuler.Problem;
 
-//Euler problem #18:
-//Find the maximum total from top to bottom of the triangle below:
-//Answer: 1074, Time: 0ms
+/**
+ * Project Euler problem #018:
+ * Answer: 1074, Time: 0ms
+ *
+ * Find the maximum total from top to bottom of the triangle below:
+ */
 
 public class Problem018 implements Problem {
     public Number solve() {

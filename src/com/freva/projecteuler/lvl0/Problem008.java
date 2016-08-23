@@ -2,9 +2,14 @@ package com.freva.projecteuler.lvl0;
 
 import com.freva.projecteuler.Problem;
 
-//Euler problem #8:
-//Find the thirteen adjacent digits in the 1000-digit number that have the greatest product. What is the value of this product?
-//Answer: 23514624000, Time: 0ms
+/**
+ * Project Euler problem #008:
+ * Answer: 23514624000, Time: 0ms
+ *
+ * The four adjacent digits in the 1000-digit number that have the greatest product are 9 × 9 × 8 × 9 = 5832.
+ * Find the thirteen adjacent digits in the 1000-digit number that have the greatest product. What is the value of
+ * this product?
+ */
 
 public class Problem008 implements Problem {
     public Number solve() {
@@ -25,10 +30,10 @@ public class Problem008 implements Problem {
         long largestProduct = 0;
 
         for (int i = 0; i < input.length(); i++) {
-            sequence = (sequence << 4) | (input.charAt(i) - '0'); //Push current digit into long, occupying the last 4 bits
+            sequence = (sequence << 4) | (input.charAt(i) - '0'); // Push current digit into long, occupying the last 4 bits
 
             long product = 1;
-            for (int j = 0; j < sequenceLength; j++) { //Go through groups of 4 and 4 bits, multiplying them with each other
+            for (int j = 0; j < sequenceLength; j++) { // Go through groups of 4 and 4 bits, multiplying them with each other
                 product *= (sequence >> (4 * j)) & 0xF;
             }
 
