@@ -6,12 +6,37 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
-//Euler problem #54:
-//The file contains one-thousand random hands dealt to two players. Each line of the file contains ten cards (separated
-//by a single space): the first five are Player 1's cards and the last five are Player 2's cards. You can assume that
-//all hands are valid (no invalid characters or repeated cards), each player's hand is in no specific order, and in
-//each hand there is a clear winner. How many hands does Player 1 win?
-//Answer: 376, Time: 3ms
+/**
+ * Project Euler problem #054:
+ * Answer: 376, Time: 3ms
+ *
+ * In the card game poker, a hand consists of five cards and are ranked, from lowest to highest, in the following way:
+ *  High Card: Highest value card.
+ *  One Pair: Two cards of the same value.
+ *  Two Pairs: Two different pairs.
+ *  Three of a Kind: Three cards of the same value.
+ *  Straight: All cards are consecutive values.
+ *  Flush: All cards of the same suit.
+ *  Full House: Three of a kind and a pair.
+ *  Four of a Kind: Four cards of the same value.
+ *  Straight Flush: All cards are consecutive values of same suit.
+ *  Royal Flush: Ten, Jack, Queen, King, Ace, in same suit.
+ *
+ *  The cards are valued in the order:
+ *      2, 3, 4, 5, 6, 7, 8, 9, 10, Jack, Queen, King, Ace.
+ *
+ * If two players have the same ranked hands then the rank made up of the highest value wins; for example, a pair of
+ * eights beats a pair of fives (see example 1 below). But if two ranks tie, for example, both players have a pair of
+ * queens, then highest cards in each hand are compared (see example 4 below); if the highest cards tie then the next
+ * highest cards are compared, and so on.
+ *
+ * The file res/054.txt contains one-thousand random hands dealt to two players. Each line of the file contains ten
+ * cards (separated by a single space): the first five are Player 1's cards and the last five are Player 2's cards.
+ * You can assume that all hands are valid (no invalid characters or repeated cards), each player's hand is in no
+ * specific order, and in each hand there is a clear winner.
+ *
+ * How many hands does Player 1 win?
+ */
 
 public class Problem054 implements Problem {
     private static final long FOUR_OF_A_KIND_CARDS = 0xFFF8000000000L;
@@ -20,7 +45,6 @@ public class Problem054 implements Problem {
 
     private static final String CARD_RANKS = "23456789TJQKA";
     private static final String CARD_SUITS = "HCDS";
-
 
     public Number solve() {
         int count = 0;
@@ -41,7 +65,7 @@ public class Problem054 implements Problem {
      * The scoring system uses a long to represent distribution of cards in hand, the long consists of four 13bit
      * segments where i'th bit in n'th segment, if set, means that there are n i-ranked cards. F.ex. if the 28th bit
      * is set, that means there are 28/13 = 2 cards of rank 28%13=2 (the 4 card, as 0=2, 1=3, ... 11=K, 12=A)
-     * <p>
+     *
      * Royal Flush: Ten, Jack, Queen, King, Ace, in same suit.
      * returns 1<<60 + 1111100000000b  (is special case of Straight flush, see below)
      * Straight Flush: All cards are consecutive values of same suit.
@@ -69,32 +93,32 @@ public class Problem054 implements Problem {
         final boolean isStraight = isStraight(distribution);
 
         if (isStraight) {
-            if (isFlush) {                                          //Straight flush
+            if (isFlush) {                                              // Straight flush
                 return (1L << 60) + distribution;
-            } else {                                                //Straight
+            } else {                                                    // Straight
                 return (1L << 56) + distribution;
             }
         }
         if (isFlush) {
             return (1L << 57) + distribution;
-        } else if ((distribution & FOUR_OF_A_KIND_CARDS) > 0) {     //Four of a Kind
+        } else if ((distribution & FOUR_OF_A_KIND_CARDS) > 0) {         // Four of a Kind
             return (1L << 59) + distribution;
         } else if ((distribution & THREE_OF_A_KIND_CARDS) > 0) {
-            if ((distribution & TWO_OF_A_KIND_CARDS) > 0) {         //Full House
+            if ((distribution & TWO_OF_A_KIND_CARDS) > 0) {             // Full House
                 return (1L << 58) + distribution;
-            } else {                                                //Three of a Kind
+            } else {                                                    // Three of a Kind
                 return (1L << 55) + distribution;
             }
-        } else if ((distribution & TWO_OF_A_KIND_CARDS) > 0) {           //Two of a Kind
+        } else if ((distribution & TWO_OF_A_KIND_CARDS) > 0) {          // Two of a Kind
             final long twos = (distribution & TWO_OF_A_KIND_CARDS);
-            if ((twos >> (Long.numberOfTrailingZeros(twos) + 1)) > 0) {  //Two Pairs
+            if ((twos >> (Long.numberOfTrailingZeros(twos) + 1)) > 0) { // Two Pairs
                 return (1L << 54) + distribution;
-            } else {                                                //One Pair
+            } else {                                                    // One Pair
                 return (1L << 53) + distribution;
             }
         }
 
-        return distribution;                                        //Nothing, return highest card value
+        return distribution;                                            // Nothing, return highest card value
     }
 
     private static long getRankDistribution(String hand) {

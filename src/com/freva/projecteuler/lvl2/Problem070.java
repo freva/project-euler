@@ -3,9 +3,19 @@ package com.freva.projecteuler.lvl2;
 import com.freva.projecteuler.Functions;
 import com.freva.projecteuler.Problem;
 
-//Euler problem #70:
-//Find the value of n, 1 < n < 10^7, for which φ(n) is a permutation of n and the ratio n/φ(n) produces a minimum.
-//Answer: 8319823, Time: 4ms
+/**
+ * Project Euler problem #070:
+ *
+ *
+ * Euler's Totient function, φ(n) [sometimes called the phi function], is used to determine the number of positive
+ * numbers less than or equal to n which are relatively prime to n. For example, as 1, 2, 4, 5, 7, and 8, are all
+ * less than nine and relatively prime to nine, φ(9)=6.
+ * The number 1 is considered to be relatively prime to every positive number, so φ(1)=1.
+ *
+ * Interestingly, φ(87109)=79180, and it can be seen that 87109 is a permutation of 79180.
+ *
+ * Find the value of n, 1 < n < 10^7, for which φ(n) is a permutation of n and the ratio n/φ(n) produces a minimum.
+ */
 
 public class Problem070 implements Problem {
     public Number solve() {
@@ -41,40 +51,3 @@ public class Problem070 implements Problem {
         return bestN;
     }
 }
-
-
-//#Answer: 8319823
-//#123.99ms
-//
-//
-//primes = [2]
-//bigPrimes = []
-//n, sq = 3, 2
-//while n<=5000:
-//	prime=True
-//	for i in primes:
-//		if n%i == 0:
-//			prime=False
-//			break
-//		if i > sq:
-//			break
-//	if prime:
-//		primes.append(n)
-//		if n>2000:
-//			bigPrimes.append(n)
-//	n+=2
-//	sq = int(n**0.5)
-//
-//recordN, record, limit = 1, 2.0, 10**7
-//for i in range(len(bigPrimes)):
-//	for j in range(i+1, len(bigPrimes)):
-//		n=bigPrimes[i]*bigPrimes[j]
-//		if n>limit:
-//			break
-//
-//		phi=(bigPrimes[i]-1)*(bigPrimes[j]-1)
-//		ratio=n/float(phi)
-//		if (sorted(list(str(n))) == sorted(list(str(phi)))) and (ratio < record):
-//			recordN=n
-//			record=ratio
-//print recordN
