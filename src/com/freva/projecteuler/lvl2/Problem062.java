@@ -23,7 +23,7 @@ public class Problem062 implements Problem {
             for (int j = i - 1, counter = 1; cubeSignatures[j] != 0; j--) {
                 if (cubeSignatures[j] == cubeSignatures[i]) {
                     if (++counter == 5) {
-                        return (long) j * j * j;
+                        return Functions.pow(j, 3);
                     }
                 }
             }

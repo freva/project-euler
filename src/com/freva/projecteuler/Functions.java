@@ -80,14 +80,22 @@ public class Functions {
     }
 
 
-    public static long modPow(long x, long c, long m) {
+    public static long modPow(long a, long b, long mod) {
         long result = 1;
-        while (c > 0) {
-            if ((c & 1) == 1) {
-                result = (result * x) % m;
+        while (b > 0) {
+            if ((b & 1) == 1) {
+                result = (result * a) % mod;
             }
-            x = (x * x) % m;
-            c >>= 1;
+            a = (a * a) % mod;
+            b >>= 1;
+        }
+        return result;
+    }
+
+    public static long pow(int a, int b) {
+        long result = 1;
+        for (int i = 0; i < b; i++) {
+            result *= a;
         }
         return result;
     }
@@ -225,6 +233,16 @@ public class Functions {
         }
 
         return sum;
+    }
+
+    public static int min(int... numbers) {
+        int min = Integer.MAX_VALUE;
+        for (int number : numbers) {
+            if (number < min) {
+                min = number;
+            }
+        }
+        return min;
     }
 
     public static int sumOfDigits(BigInteger bigInteger) {

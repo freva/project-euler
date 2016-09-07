@@ -22,6 +22,12 @@ public class Problem031 implements Problem {
 
         int[] numberOfWaysToMake = new int[goal + 1];
         numberOfWaysToMake[0] = 1;
+
+        /**
+         * As each iteration of this loop finishes, we have the total number of ways to make an amount using only coins
+         * less than or equal to the one we just iterated over. That is, after 3 iterations we have the total number of
+         * ways to make an amount only using 1p, 2p and 5p coins.
+         */
         for (int coin : coins) {
             for (int i = coin; i <= goal; i++) {
                 numberOfWaysToMake[i] += numberOfWaysToMake[i - coin];
