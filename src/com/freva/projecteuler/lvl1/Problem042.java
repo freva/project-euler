@@ -36,7 +36,7 @@ public class Problem042 implements Problem {
         int total = 0;
         for (String name : names) {
             int sum = 0;
-            for (int j = 1; j < name.length() - 1; j++) {
+            for (int j = 0; j < name.length(); j++) {
                 sum += name.charAt(j) - 'A' + 1;
             }
 
