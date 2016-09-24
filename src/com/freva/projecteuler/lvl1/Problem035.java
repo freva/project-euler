@@ -29,14 +29,15 @@ public class Problem035 implements Problem {
     }
 
     private static boolean isCircularPrime(int prime, boolean[] isComposite) {
-        final int tenPower = (int) Math.pow(10, Math.floor(Math.log10(prime)));
+        final int numberOfDigits = (int) Math.log10(prime);
+        final int tenPower = (int) Functions.pow(10, numberOfDigits);
 
         int candidate = prime;
-        do {
+        for (int i = 0; i < numberOfDigits; i++) {
             candidate = tenPower * (candidate % 10) + candidate / 10; // Rotate the number
 
             if (isComposite[candidate]) return false;
-        } while (candidate != prime);
+        }
 
         return true;
     }
