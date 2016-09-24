@@ -80,4 +80,54 @@ public class Lvl3 {
     public void testProblem090Solution() {
         assertEquals(new Problem090().solve(), 1217);
     }
+
+    @Test
+    public void testProblem091Solution() {
+        assertEquals(new Problem091().solve(), 14234);
+    }
+
+    @Test
+    public void testProblem092Solution() {
+        assertEquals(new Problem092().solve(), 8581146);
+    }
+
+    @Test
+    public void testProblem093Solution() {
+        assertEquals(new Problem093().solve(), 1258);
+    }
+
+    @Test
+    public void testProblem094Solution() {
+        assertEquals(new Problem094().solve(), 518408346);
+    }
+
+    @Test
+    public void testProblem095Solution() {
+        assertEquals(new Problem095().solve(), 14316);
+    }
+
+    @Test
+    public void testProblem096Solution() {
+        assertEquals(new Problem096().solve(), 24702);
+    }
+
+    @Test
+    public void testProblem097Solution() {
+        assertEquals(new Problem097().solve(), 8739992577L);
+    }
+
+    @Test
+    public void testProblem098Solution() {
+        assertEquals(new Problem098().solve(), 18769);
+    }
+
+    @Test
+    public void testProblem099Solution() {
+        assertEquals(new Problem099().solve(), 709);
+    }
+
+    @Test
+    public void testProblem100Solution() {
+        assertEquals(new Problem100().solve(), 756872327473L);
+    }
 }
