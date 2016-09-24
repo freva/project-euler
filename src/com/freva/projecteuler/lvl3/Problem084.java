@@ -1,5 +1,6 @@
 package com.freva.projecteuler.lvl3;
 
+import com.freva.projecteuler.ArrayFunctions;
 import com.freva.projecteuler.Problem;
 
 import java.util.Random;
@@ -128,23 +129,11 @@ public class Problem084 implements Problem {
 
         int solution = 0;
         for (int i = 0; i < 3; i++) {
-            int largestIndex = getIndexOfLargestElement(freq);
+            int largestIndex = ArrayFunctions.getIndexOfLargestElement(freq);
             solution = 100 * solution + largestIndex;
             freq[largestIndex] = 0;
         }
 
         return solution;
-    }
-
-    private static int getIndexOfLargestElement(int array[]) {
-        int largestIndex = 0;
-
-        for (int i = 1; i < array.length; i++) {
-            if (array[i] > array[largestIndex]) {
-                largestIndex = i;
-            }
-        }
-
-        return largestIndex;
     }
 }

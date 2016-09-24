@@ -1,5 +1,6 @@
 package com.freva.projecteuler.lvl2;
 
+import com.freva.projecteuler.ArrayFunctions;
 import com.freva.projecteuler.Problem;
 
 import java.io.BufferedReader;
@@ -41,24 +42,12 @@ public class Problem059 implements Problem {
 
         int sum = 0;
         for (int[] count : counts) {
-            int enc = findIndexOfLargest(count) ^ ' ';
+            int enc = ArrayFunctions.getIndexOfLargestElement(count) ^ ' ';
             for (int freq = 0; freq < count.length; freq++) {
                 sum += (freq ^ enc) * count[freq];
             }
         }
 
         return sum;
-    }
-
-    private static int findIndexOfLargest(int array[]) {
-        int largestIndex = 0;
-
-        for (int i = 1; i < array.length; i++) {
-            if (array[i] > array[largestIndex]) {
-                largestIndex = i;
-            }
-        }
-
-        return largestIndex;
     }
 }

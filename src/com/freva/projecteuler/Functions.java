@@ -14,6 +14,10 @@ public class Functions {
      */
     public static final int[] TEN_PRIMES = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29};
 
+    /**
+     * Contains the then first square numbers
+     */
+    public static final int[] TEN_SQUARES = {0, 1, 4, 9, 16, 25, 36, 49, 64, 81};
 
 
     /**
@@ -224,25 +228,6 @@ public class Functions {
         }
 
         return signature;
-    }
-
-    public static long sum(int[] numbers) {
-        long sum = 0;
-        for(Integer number: numbers) {
-            sum += number;
-        }
-
-        return sum;
-    }
-
-    public static int min(int... numbers) {
-        int min = Integer.MAX_VALUE;
-        for (int number : numbers) {
-            if (number < min) {
-                min = number;
-            }
-        }
-        return min;
     }
 
     public static int sumOfDigits(BigInteger bigInteger) {

@@ -1,6 +1,6 @@
 package com.freva.projecteuler.lvl2;
 
-import com.freva.projecteuler.Functions;
+import com.freva.projecteuler.ArrayFunctions;
 import com.freva.projecteuler.Problem;
 
 /**
@@ -31,6 +31,6 @@ public class Problem073 implements Problem {
             }
         }
 
-        return Functions.sum(a) - 1;
+        return ArrayFunctions.sum(a) - 1;
     }
 }

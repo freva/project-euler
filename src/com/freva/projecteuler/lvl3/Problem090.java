@@ -1,5 +1,6 @@
 package com.freva.projecteuler.lvl3;
 
+import com.freva.projecteuler.Functions;
 import com.freva.projecteuler.Problem;
 
 /**
@@ -58,8 +59,8 @@ public class Problem090 implements Problem {
 
     private static boolean hasArrangementsAllSquares(int c1, int c2) {
         for (int i = 1; i < 10; i++) {
-            int s1 = (i * i) % 10;
-            int s2 = (i * i) / 10;
+            int s1 = Functions.TEN_SQUARES[i] % 10;
+            int s2 = Functions.TEN_SQUARES[i] / 10;
 
             // If c1 has s1th bit set and c2 has s2th bit set OR c1 has s2th bit set and c2 has s1th bit set
             if (((c1 & (1<<s1)) * (c2 & (1<<s2))) == 0 && ((c1 & (1<<s2)) * (c2 & (1<<s1))) == 0) {

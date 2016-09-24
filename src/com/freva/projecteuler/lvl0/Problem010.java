@@ -1,5 +1,6 @@
 package com.freva.projecteuler.lvl0;
 
+import com.freva.projecteuler.ArrayFunctions;
 import com.freva.projecteuler.Functions;
 import com.freva.projecteuler.Problem;
 
@@ -16,6 +17,6 @@ public class Problem010 implements Problem {
     public Number solve() {
         int[] primes = Functions.getPrimesBelow(2_000_000);
 
-        return Functions.sum(primes);
+        return ArrayFunctions.sum(primes);
     }
 }

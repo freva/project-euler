@@ -1,6 +1,6 @@
 package com.freva.projecteuler.lvl3;
 
-import com.freva.projecteuler.Functions;
+import com.freva.projecteuler.ArrayFunctions;
 import com.freva.projecteuler.Problem;
 
 import java.io.BufferedReader;
@@ -45,6 +45,6 @@ public class Problem082 implements Problem {
             }
         }
 
-        return Functions.min(matrix[matrix.length - 1]);
+        return ArrayFunctions.min(matrix[matrix.length - 1]);
     }
 }
