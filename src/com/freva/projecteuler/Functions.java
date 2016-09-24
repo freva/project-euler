@@ -27,9 +27,8 @@ public class Functions {
      */
     public static long reverseNumber(long number) {
         long reversed = 0;
-        for (long n=number; n > 0; ) {
-            reversed = reversed*10 + (n % 10);
-            n /= 10;
+        for (long n = number; n > 0; n /= 10) {
+            reversed = 10 * reversed + (n % 10);
         }
 
         return reversed;
@@ -97,8 +96,8 @@ public class Functions {
     }
 
     public static long pow(int a, int b) {
-        long result = 1;
-        for (int i = 0; i < b; i++) {
+        long result = a;
+        for (int i = 1; i < b; i++) {
             result *= a;
         }
         return result;
@@ -190,8 +189,6 @@ public class Functions {
      * Concatenates digits to a single long
      */
     public static long concatenateDigits(int... digits) {
-        if (digits.length == 1) return digits[0];
-
         long concatenated = digits[0];
         for (int j = 1, temp; j < digits.length; j++) {
             temp = digits[j];

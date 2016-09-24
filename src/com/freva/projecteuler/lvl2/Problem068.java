@@ -64,7 +64,7 @@ public class Problem068 implements Problem {
     /**
      * Attempts to find solution to a five-gon with a given outer-ring and the first digit of the inner-ring.
      */
-    private long solveFiveGon(int[] outerRing, int firstInnerRingNumber) {
+    private static long solveFiveGon(int[] outerRing, int firstInnerRingNumber) {
         int[] solution = new int[15]; // The solution is a concatenation of 15 numbers (but 16-digits)
         solution[0] = outerRing[0]; // The first number in the 15-number solution is the first number of the outer-ring
         solution[1] = firstInnerRingNumber; // Then the first number of the inner ring
